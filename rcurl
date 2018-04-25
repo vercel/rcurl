@@ -1,0 +1,48 @@
+#!/bin/sh
+# curl --resolve helper
+#
+# usage:
+#   rcurl $target $url [$opts...]
+#
+# examples:
+#   rcurl 127.0.0.1 https://sf.n8.io -v
+#   rcurl alias-bru1.zeit.co https://sf.n8.io -v
+set -euo pipefail
+
+verbose="$(echo "$*" | grep '\-v' || true)"
+
+resolve() {
+  # MacOS
+  dscacheutil -q host -a name "${1}" | grep ip_address | head -n1 | awk '{printf $2;}'
+}
+
+debug() {
+  if [ ! -z "${verbose}" ]; then
+    echo '* rcurl -' "$@" >&2
+  fi
+}
+
+target="${1}"
+shift
+
+url="${1}"
+shift
+
+hostname="$(echo "${url}" | sed 's~http[s]*://~~g' | sed 's/\/.*//')"
+debug 'Hostname: ' "${hostname}"
+
+port=80
+if echo "${url}" | grep -E -i '^https://' >/dev/null; then
+  port=443
+fi
+debug 'Port:     ' "${port}"
+
+target_ip="$(resolve "${target}")"
+if [ -z "${target_ip}" ]; then
+  # if dig returned nothing then is 127.0.0.1 or something
+  target_ip="${target}"
+fi
+debug 'Target IP:' "${target_ip}"
+
+debug 'Command:  ' curl --resolve "${hostname}:${port}:${target_ip}" "${url}" "$@"
+exec curl --resolve "${hostname}:${port}:${target_ip}" "${url}" "$@"
