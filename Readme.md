@@ -18,6 +18,12 @@ $ rcurl staging-sfo1.zeit.co https://ip.now.sh -v
 * Connected to ip.now.sh (52.52.221.208) port 443 (#0)
 ```
 
+## Install
+
+```
+yarn global add @zeit/rcurl
+```
+
 ## Usage
 
 ```
@@ -33,9 +39,3 @@ HTTP method, body, etc.
 curl 127.0.0.1 https://zeit.co
 curl alias-bru1.zeit.co https://zeit.co -v --header "Authorization: bearer $token"
 ```
-
-## Install
-
- 1. Clone this repo
- 1. `cd rcurl`
- 1. `ln -s rcurl /usr/local/bin`
