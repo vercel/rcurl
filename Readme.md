@@ -17,3 +17,9 @@ HTTP method, body, etc.
 curl 127.0.0.1 https://zeit.co
 curl alias-bru1.zeit.co https://zeit.co -v --header "Authorization: bearer $token"
 ```
+
+## Install
+
+ 1. Clone this repo
+ 1. `cd rcurl`
+ 1. `ln -s rcurl /usr/local/bin`
