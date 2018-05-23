@@ -1,5 +1,7 @@
 # rcurl
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zeit/rcurl.svg?token=ea7b234fcf75057061372b6f29bb4bee957ce7a32144c24017060b8535eae8dd&ts=1527111375094)](https://greenkeeper.io/)
+
 `curl --resolve` helper script.
 
 The `-v` flag also includes additional debugging information from `rcurl`:
