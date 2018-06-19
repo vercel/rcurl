@@ -12,8 +12,13 @@ set -euo pipefail
 verbose="$(echo "$*" | grep '\-v' || true)"
 
 resolve() {
-  # MacOS
-  dscacheutil -q host -a name "${1}" | grep ip_address | head -n1 | awk '{printf $2;}'
+  if hash dscacheutil 2>/dev/null; then
+    # MacOS
+    dscacheutil -q host -a name "${1}" | grep ip_address | head -n1 | awk '{printf $2;}'
+  else
+    # Linux
+    dig +short "${1}" | head -n1
+  fi
 }
 
 debug() {
