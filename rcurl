@@ -22,7 +22,7 @@ resolve() {
 }
 
 debug() {
-  [ ! -z "${verbose}" ] && echo '* rcurl -' "$@" >&2
+  [ ! -z "${verbose}" ] && echo '* rcurl -' "$@" >&2 ||:
 }
 
 target="${1}"
