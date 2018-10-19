@@ -1,4 +1,4 @@
-# rcurl
+j rcurl
 
 `curl --resolve` helper script.
 
@@ -23,7 +23,7 @@ $ rcurl staging-sfo1.zeit.co https://ip.now.sh -v
 [Install `import`](https://import.pw/importpw/import/docs/install.md), then add
 this to your shell script or `.bashrc`/`.zshrc` file:
 
-```
+```bash
 # Load the `import` function
 . "$(which import)"
 
