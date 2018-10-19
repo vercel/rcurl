@@ -4,7 +4,6 @@ rcurl_debug() {
   [ ! -z "$(echo "$*" | grep '\-v' ||:)" ] && echo '* rcurl -' "$@" >&2 ||:
 }
 
-
 rcurl() {
   target="${1}"
   shift
