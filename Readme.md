@@ -20,8 +20,15 @@ $ rcurl staging-sfo1.zeit.co https://ip.now.sh -v
 
 ## Install
 
+[Install `import`](https://import.pw/importpw/import/docs/install.md), then add
+this to your shell script or `.bashrc`/`.zshrc` file:
+
 ```
-yarn global add @zeit/rcurl
+# Load the `import` function
+. "$(which import)"
+
+# Import the rcurl function
+import "zeit/rcurl@2.0.0"
 ```
 
 ## Usage
