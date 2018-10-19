@@ -1,5 +1,5 @@
 {
   "name": "@zeit/rcurl",
   "version": "1.0.2",
-  "bin": "./rcurl"
+  "bin": "./bin/rcurl"
 }

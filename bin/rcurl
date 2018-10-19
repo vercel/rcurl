@@ -1,0 +1,14 @@
+#!/bin/bash
+# curl --resolve helper
+#
+# usage:
+#   rcurl $target $url [$opts...]
+#
+# examples:
+#   rcurl 127.0.0.1 https://sf.n8.io -v
+#   rcurl alias-bru1.zeit.co https://sf.n8.io -v
+set -euo pipefail
+. "$(which import)"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+source "$DIR/rcurl.sh"
+rcurl "$@"
