@@ -1,4 +1,4 @@
-j rcurl
+# rcurl
 
 `curl --resolve` helper script.
 
