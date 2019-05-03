@@ -28,7 +28,7 @@ this to your shell script or `.bashrc`/`.zshrc` file:
 . "$(which import)"
 
 # Import the rcurl function
-import "zeit/rcurl@2.0.0"
+import "zeit/rcurl@2.0.2" # NOTE: replace with latest version
 ```
 
 ## Usage
