@@ -26,7 +26,7 @@ rcurl() {
   fi
   rcurl_debug "Port:     ${port}" "$@"
 
-  target_ip="$(dns_lookup "${target}")"
+  target_ip="$(dns_lookup "${target}" | head -1)"
   if [ -z "${target_ip}" ]; then
     # if dig returned nothing then is 127.0.0.1 or something
     target_ip="${target}"
