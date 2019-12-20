@@ -17,7 +17,7 @@ rcurl() {
   url="${1}"
   shift
 
-  hostname="$(echo "${url}" | sed 's~http[s]*://~~g' | sed 's/\/.*//')"
+  hostname="$(echo "${url}" | sed 's~http[s]*://~~g' | sed 's/[\?\/].*//')"
   rcurl_debug "Hostname: ${hostname}" "$@"
 
   port=80
