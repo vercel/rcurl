@@ -20,7 +20,7 @@ $ rcurl staging-sfo1.zeit.co https://ip.now.sh -v
 
 ## Install
 
-[Install `import`](https://import.pw/importpw/import/docs/install.md), then add
+[Install `import`](https://import.sh/docs/install), then add
 this to your shell script or `.bashrc`/`.zshrc` file:
 
 ```bash
