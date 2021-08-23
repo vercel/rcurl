@@ -5,17 +5,16 @@
 The `-v` flag also includes additional debugging information from `rcurl`:
 
 ```
-$ rcurl staging-sfo1.zeit.co https://ip.now.sh -v
-* rcurl - Hostname:  ip.now.sh
+$ rcurl staging-sfo1.vercel.com https://ip.vercel.app -v
+* rcurl - Hostname:  ip.vercel.app
 * rcurl - Port:      443
-* rcurl - Target IP: 52.52.221.208
-* rcurl - Command:   curl --resolve ip.now.sh:443:52.52.221.208 https://ip.now.sh -v
-* Added ip.now.sh:443:52.52.221.208 to DNS cache
-* Rebuilt URL to: https://ip.now.sh/
-* Hostname ip.now.sh was found in DNS cache
-*   Trying 52.52.221.208...
+* rcurl - Target IP: 76.76.21.21
+* rcurl - Command:   curl --resolve ip.vercel.app:443:76.76.21.21 https://ip.vercel.app -v
+* Added ip.vercel.app:443:76.76.21.21 to DNS cache
+* Hostname ip.vercel.app was found in DNS cache
+*   Trying 76.76.21.21...
 * TCP_NODELAY set
-* Connected to ip.now.sh (52.52.221.208) port 443 (#0)
+* Connected to ip.vercel.app (76.76.21.21) port 443 (#0)
 ```
 
 ## Install
@@ -28,7 +27,7 @@ this to your shell script or `.bashrc`/`.zshrc` file:
 . "$(which import)"
 
 # Import the rcurl function
-import "zeit/rcurl@2.0.2" # NOTE: replace with latest version
+import "vercel/rcurl@2.0.2" # NOTE: replace with latest version
 ```
 
 ## Usage
@@ -43,6 +42,6 @@ HTTP method, body, etc.
 ## Examples
 
 ``` bash
-curl 127.0.0.1 https://zeit.co
-curl alias-bru1.zeit.co https://zeit.co -v --header "Authorization: bearer $token"
+rcurl 127.0.0.1 https://vercel.com
+rcurl alias-bru1.vercel.com https://vercel.com -v --header "Authorization: bearer $token"
 ```
